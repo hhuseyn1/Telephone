@@ -5,8 +5,70 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Source"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="550" Width="300">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
+
+        <!-- //////////////////////////////////// Buttons //////////////////////////////////// -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--//////////////////////////////////////////////////////////-->
+            <Button Grid.Row="0" Grid.Column="0" FontSize="21">
+                <TextBlock TextAlignment="Center">1<LineBreak/>o_o</TextBlock>
+            </Button>
+
+            <Button Grid.Row="0" Grid.Column="1" FontSize="21">
+                <TextBlock TextAlignment="Center">2<LineBreak/>abc</TextBlock>
+            </Button>
+
+            <Button Grid.Row="0" Grid.Column="2" FontSize="21">
+                <TextBlock TextAlignment="Center">3<LineBreak/>def</TextBlock>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="0" FontSize="21">
+                <TextBlock TextAlignment="Center">4<LineBreak/>ghi</TextBlock>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="1" FontSize="21">
+                <TextBlock TextAlignment="Center">5<LineBreak/>jkl</TextBlock>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="2" FontSize="21">
+                <TextBlock TextAlignment="Center">6<LineBreak/>mno</TextBlock>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="0" FontSize="21">
+                <TextBlock TextAlignment="Center">7<LineBreak/>pqrs</TextBlock>
+            </Button>
+
+            <Button Grid.Row="2" Grid.Column="1" FontSize="21">
+                <TextBlock TextAlignment="Center">8<LineBreak/>tuv</TextBlock>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="2" FontSize="21">
+                <TextBlock TextAlignment="Center">9<LineBreak/>wxyz</TextBlock>
+            </Button>
+
+            <Button Grid.Row="3" Content="*" Grid.Column="0" FontSize="30"/>
+
+
+            <Button Grid.Row="3" Grid.Column="1" FontSize="21">
+                <TextBlock TextAlignment="Center">0<LineBreak/>'-'</TextBlock>
+            </Button>
+
+            <Button Grid.Row="3" Grid.Column="2" FontSize="21">
+                <TextBlock TextAlignment="Center">#<LineBreak/>↑</TextBlock>
+            </Button>
+
+        </Grid>
     </Grid>
 </Window>
