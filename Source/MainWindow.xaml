@@ -25,7 +25,7 @@
             </Grid.ColumnDefinitions>
             <ListBox Grid.Row="2" Grid.Column="1" Background="White"/>
 
-            <TextBlock Grid.Row="1" Grid.Column="1" Background="LightGray"/>
+            <TextBlock Name="Textline" Grid.Row="1" Grid.Column="1" Background="LightGray"/>
         </Grid>
 
 
