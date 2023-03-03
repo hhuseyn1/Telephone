@@ -5,17 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Source"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="300">
+        Title="MainWindow" Height="650" Width="350">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="1.1*"/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="1.4*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="DodgerBlue">
             <Grid.RowDefinitions>
                 <RowDefinition/>
-                <RowDefinition Height="0.45*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="7*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -23,18 +24,61 @@
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <ListBox Grid.Row="2" Grid.Column="1" Background="White"/>
+            <ListBox FontSize="15" Name="ScreenLbox" Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Path=CloseWords}"  Background="White"/>
 
-            <TextBlock Name="Textline" Grid.Row="1" Grid.Column="1" Background="LightGray"/>
+            <TextBox FontSize="15" Name="Textline" Grid.Row="1" Grid.Column="1" Background="LightGray" TextChanged="Textline_TextChanged"/>
         </Grid>
 
 
         <!-- //////////////////////////////////// Buttons //////////////////////////////////// -->
+
+
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="0.2*"/>
+            </Grid.RowDefinitions>
+
+
+            <Grid Grid.Row="0" Grid.Column="2">
+                <Button Name="UpBtn" Click="UDRLBtn_Click" Content="▲" FontSize="30" Width="50" Height="50" VerticalAlignment="Bottom"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Button Name="LeftBtn" Click="UDRLBtn_Click" Content="◀" FontSize="30" Width="50" Height="50" HorizontalAlignment="Right"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="3">
+                <Button Name="RightBtn" Click="UDRLBtn_Click" Content="▶" FontSize="30" Width="50" Height="50" HorizontalAlignment="Left"/>
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="2">
+                <Button Name="DownBtn" Click="UDRLBtn_Click" Content="▼" FontSize="30" Width="50" Height="50" VerticalAlignment="Top"/>
+            </Grid>
+
+            <Button Grid.Row="2" Name="CBtn" Click="CBtn_Click" Content="C" FontWeight="SemiBold" FontSize="15" Grid.Column="1" Width="75" Height="30" VerticalAlignment="Bottom"/>
+            <Button Grid.Row="2" Name="AddBtn" Click="AddBtn_Click" Content="Add" FontWeight="SemiBold" Grid.Column="3" Width="75" Height="30" VerticalAlignment="Bottom"/>
+
+        </Grid>
+
+        
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition  Width="0.1*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -43,45 +87,45 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <!--//////////////////////////////////////////////////////////-->
-            <Button Grid.Row="0" Grid.Column="0" FontSize="21">
+            <Button Grid.Row="0" Grid.Column="1" FontSize="21">
                 <TextBlock TextAlignment="Center">1<LineBreak/>o_o</TextBlock>
             </Button>
 
-            <Button Grid.Row="0" Grid.Column="1" FontSize="21">
+            <Button Grid.Row="0" Grid.Column="2" FontSize="21">
                 <TextBlock TextAlignment="Center">2<LineBreak/>abc</TextBlock>
             </Button>
 
-            <Button Grid.Row="0" Grid.Column="2" FontSize="21">
+            <Button Grid.Row="0" Grid.Column="3" FontSize="21">
                 <TextBlock TextAlignment="Center">3<LineBreak/>def</TextBlock>
             </Button>
-            <Button Grid.Row="1" Grid.Column="0" FontSize="21">
+            <Button Grid.Row="1" Grid.Column="1" FontSize="21">
                 <TextBlock TextAlignment="Center">4<LineBreak/>ghi</TextBlock>
             </Button>
-            <Button Grid.Row="1" Grid.Column="1" FontSize="21">
+            <Button Grid.Row="1" Grid.Column="2" FontSize="21">
                 <TextBlock TextAlignment="Center">5<LineBreak/>jkl</TextBlock>
             </Button>
-            <Button Grid.Row="1" Grid.Column="2" FontSize="21">
+            <Button Grid.Row="1" Grid.Column="3" FontSize="21">
                 <TextBlock TextAlignment="Center">6<LineBreak/>mno</TextBlock>
             </Button>
-            <Button Grid.Row="2" Grid.Column="0" FontSize="21">
+            <Button Grid.Row="2" Grid.Column="1" FontSize="21">
                 <TextBlock TextAlignment="Center">7<LineBreak/>pqrs</TextBlock>
             </Button>
 
-            <Button Grid.Row="2" Grid.Column="1" FontSize="21">
+            <Button Grid.Row="2" Grid.Column="2" FontSize="21">
                 <TextBlock TextAlignment="Center">8<LineBreak/>tuv</TextBlock>
             </Button>
-            <Button Grid.Row="2" Grid.Column="2" FontSize="21">
+            <Button Grid.Row="2" Grid.Column="3" FontSize="21">
                 <TextBlock TextAlignment="Center">9<LineBreak/>wxyz</TextBlock>
             </Button>
 
-            <Button Grid.Row="3" Content="*" Grid.Column="0" FontSize="30"/>
+            <Button Grid.Row="3" Content="*" Grid.Column="1" FontSize="30"/>
 
 
-            <Button Grid.Row="3" Grid.Column="1" FontSize="21">
+            <Button Grid.Row="3" Grid.Column="2" FontSize="21">
                 <TextBlock TextAlignment="Center">0<LineBreak/>'-'</TextBlock>
             </Button>
 
-            <Button Grid.Row="3" Grid.Column="2" FontSize="21">
+            <Button Grid.Row="3" Grid.Column="3" FontSize="21">
                 <TextBlock TextAlignment="Center">#<LineBreak/>↑</TextBlock>
             </Button>
 
